@@ -1,0 +1,26 @@
+
+
+# OrderActionRatePlanUsageOveragePricingUpdate
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**priceChangeOption** | [**PriceChangeOptionEnum**](#PriceChangeOptionEnum) | Specifies how Zuora changes the price of the charge each time the subscription renews.  If the value of this field is &#x60;SpecificPercentageValue&#x60;, use the &#x60;priceIncreasePercentage&#x60; field to specify how much the price of the charge should change.  |  [optional] |
+|**priceIncreasePercentage** | **Double** | Specifies the percentage by which the price of the charge should change each time the subscription renews. Only applicable if the value of the &#x60;priceChangeOption&#x60; field is &#x60;SpecificPercentageValue&#x60;.  |  [optional] |
+|**includedUnits** | **Double** | A certain quantity of units for free in the overage charge model. It cannot be negative. It must be 0 and above. Decimals are allowed.  |  [optional] |
+|**overagePrice** | **Double** |  |  [optional] |
+
+
+
+## Enum: PriceChangeOptionEnum
+
+| Name | Value |
+|---- | -----|
+| NOCHANGE | &quot;NoChange&quot; |
+| SPECIFICPERCENTAGEVALUE | &quot;SpecificPercentageValue&quot; |
+| USELATESTPRODUCTCATALOGPRICING | &quot;UseLatestProductCatalogPricing&quot; |
+
+
+

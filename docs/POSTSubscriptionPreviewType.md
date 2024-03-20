@@ -1,0 +1,30 @@
+
+
+# POSTSubscriptionPreviewType
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**accountKey** | **String** |  Customer account number or ID.  You must specify the account information either in this field or in the &#x60;previewAccountInfo&#x60; field with the following conditions:           * If you already have a customer account, specify the account number or ID in this field. * If you do not have a customer account, provide account information in the &#x60;previewAccountInfo&#x60; field.  |  [optional] |
+|**contractEffectiveDate** | **LocalDate** | Effective contract date for this subscription, as yyyy-mm-dd.  |  |
+|**customerAcceptanceDate** | **LocalDate** | The date on which the services or products within a subscription have been accepted by the customer, as yyyy-mm-dd.  Default value is dependent on the value of other fields. See **Notes** section for more details.  |  [optional] |
+|**documentDate** | **LocalDate** | The date of the billing document, in &#x60;yyyy-mm-dd&#x60; format. It represents the invoice date for invoices, credit memo date for credit memos, and debit memo date for debit memos.  - If this field is specified, the specified date is used as the billing document date.  - If this field is not specified, the date specified in the &#x60;targetDate&#x60; is used as the billing document date.  |  [optional] |
+|**includeExistingDraftDocItems** | **Boolean** | Specifies whether to include draft invoice items in subscription previews. Values are:  * &#x60;true&#x60; (default). Includes draft invoice items in the preview result. * &#x60;false&#x60;. Excludes draft invoice items in the preview result.  **Note:** This field is in Zuora REST API version control. Supported minor versions are 207.0 or later [available versions](https://developer.zuora.com/api-references/api/overview/#section/API-Versions/Minor-Version).  |  [optional] |
+|**includeExistingDraftInvoiceItems** | **Boolean** | Specifies whether to include draft invoice items in previews. Values are:  * &#x60;true&#x60; (default). Includes draft invoice items in the preview result. * &#x60;false&#x60;. Excludes draft invoice items in the preview result.  **Note:** This field is in Zuora REST API version control. Supported minor versions are 186.0, 187.0, 188.0, 189.0, 196.0, and 206.0.  |  [optional] |
+|**initialTerm** | **Long** | Duration of the first term of the subscription, in whole months. If &#x60;termType&#x60; is &#x60;TERMED&#x60;, then this field is required, and the value must be greater than &#x60;0&#x60;. If &#x60;termType&#x60; is &#x60;EVERGREEN&#x60;, this field is ignored.      |  [optional] |
+|**initialTermPeriodType** | **String** | The period type of the initial term.   Supported values are:  * &#x60;Month&#x60; * &#x60;Year&#x60; * &#x60;Day&#x60; * &#x60;Week&#x60;   The default period type is &#x60;Month&#x60;.   |  [optional] |
+|**invoiceOwnerAccountKey** | **String** | Invoice owner account number or ID.  **Note:** This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).  |  [optional] |
+|**invoiceTargetDate** | **LocalDate** | Date through which to calculate charges if an invoice is generated, as yyyy-mm-dd. Default is current date.  **Note:** This field is in Zuora REST API version control. Supported minor versions are 186.0, 187.0, 188.0, 189.0, 196.0, and 206.0. .  |  [optional] |
+|**notes** | **String** | String of up to 500 characters. |  [optional] |
+|**previewAccountInfo** | [**POSTSubscriptionPreviewTypePreviewAccountInfo**](POSTSubscriptionPreviewTypePreviewAccountInfo.md) |  |  [optional] |
+|**previewType** | **String** | The type of preview you will receive.   This field is in Zuora REST API version control. The supported values of this field depend on the REST API minor version you specified in the request header.   * If you do not specify the REST API minor version or specify the minor version number to one of following values in the request header:     * 186.0   * 187.0   * 188.0   * 189.0   * 196.0   * 206.0      The following values are supported in the **previewType** field:    * InvoiceItem   * ChargeMetrics   * InvoiceItemChargeMetrics      The default value is InvoiceItem.  * If you specify the REST API minor version to 207.0 or later [available versions](https://developer.zuora.com/api-references/api/overview/#section/API-Versions/Minor-Version) in the request header, the following values are supported in the **previewType** field:    - LegalDoc   - ChargeMetrics   - LegalDocChargeMetrics    The default value is LegalDoc.  .  |  [optional] |
+|**serviceActivationDate** | **LocalDate** | The date on which the services or products within a subscription have been activated and access has been provided to the customer, as yyyy-mm-dd.  Default value is dependent on the value of other fields. See **Notes** section for more details.  |  [optional] |
+|**subscribeToRatePlans** | [**List&lt;POSTSrpCreateType&gt;**](POSTSrpCreateType.md) | Container for one or more rate plans for this subscription.  |  |
+|**targetDate** | **LocalDate** | Date through which to calculate charges if an invoice is generated, as yyyy-mm-dd. Default is current date.  **Note:** This field is in Zuora REST API version control. Supported minor versions are 207.0 or later [available versions](https://developer.zuora.com/api-references/api/overview/#section/API-Versions/Minor-Version). To use this field in the method, you must set the &#x60;zuora-version&#x60; parameter to the minor version number in the request header.  |  [optional] |
+|**termStartDate** | **LocalDate** | The date on which the subscription term begins, as yyyy-mm-dd. If this is a renewal subscription, this date is different from the subscription start date.  |  [optional] |
+|**termType** | **String** | Possible values are: &#x60;TERMED&#x60;, &#x60;EVERGREEN&#x60;.  |  |
+
+
+
